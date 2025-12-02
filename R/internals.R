@@ -141,6 +141,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom rlang .data
 #' @noRd
+#' @export
 #'
 .clean_match_advanced_stats_data <- function(df_in) {
 
