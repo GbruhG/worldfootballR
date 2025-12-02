@@ -1,3 +1,6 @@
+Fork of [`worldfootballR`](https://github.com/JaseZiv/worldfootballR) that fixes the 403 error by using custom headers in the .load_page function.
+
+Also fixed the .csv file because the big 5 function was broken because of it.
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
