@@ -2,6 +2,24 @@ Fork of [`worldfootballR`](https://github.com/JaseZiv/worldfootballR) that fixes
 
 Also fixed the .csv file because the big 5 function was broken because of it.
 
+IF YOU ARE STILL GETTING 403, ADD THIS TO THE TOP OF YOUR R SCRIPT: 
+```
+assignInNamespace(
+  x = ".load_page", 
+  ns = "worldfootballR",
+  value = function (page_url) 
+  {
+    headers <- httr::add_headers(
+      cache-control = "no-cache",
+      sec-ch-ua =  '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+      user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+    )
+    session <- rvest::session(url = page_url, headers)
+    xml2::read_html(session)
+  }
+)
+```
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # Archived
